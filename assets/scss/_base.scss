@@ -1,0 +1,16 @@
+// vars
+$white:#EDECF1;
+
+*{
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+.container-fluid{
+    padding: 0 30px;
+    box-sizing: border-box;
+}
+
+// utilities
+.bg-white{
+    background-color: $white;
+}
