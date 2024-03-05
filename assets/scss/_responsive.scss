@@ -1,0 +1,40 @@
+// responsive 992px
+@media (width <= 992px){
+    .navbar-toggler{
+        border: $white solid 1px;
+    }
+    .portfolio .gallery article{
+        width: 50%;
+    }
+    .about-us article{
+        width: 50%;
+        flex: none;
+        margin-bottom: 20px;
+    }
+}
+@media (width <= 768px){
+    .menu{
+        background-color: rgba(0, 0, 0, 0.6)!important;
+    }
+    .header-presentation{
+        flex-direction: column;
+        padding-top: 100px;
+        h2{
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+    }
+    .twc article{
+        margin-bottom: 20px;
+    }
+    .portfolio .gallery article{
+        width: 100%;
+    }
+    .about-us article{
+        width: 100%;      
+    }
+}
+@media (width <= 450px){
+    .services .accordion button span{
+        font-size: 1.5em;
+    }
+}

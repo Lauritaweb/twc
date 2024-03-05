@@ -1,4 +1,4 @@
-
+// nav
 .menu{
     background-color: transparent;
     position: fixed;
@@ -9,8 +9,30 @@
     a{
         color: white;
         font-weight: 600;
+        font-family: 'gothamlight';
+        /*Subrayado animado*/
+        background-image: linear-gradient(currentColor, currentColor);
+        background-position: 0% 100%;
+        background-repeat: no-repeat;
+        background-size: 0% 2px;
+        transition: background-size .3s;
+        &:hover{
+            color: $white;
+             /*Subrayado animado*/
+             background-size: 100% 2px;
+        }
         &.active{
-            color:$white!important;
+            color:$keyColor!important;
+        }
+    }
+    a[href="https://www.instagram.com/twc.soluciones/"],
+    a[href="https://wa.me/541159707102?text=Me%20interesa%20un%20presupuesto%20"]{
+        text-decoration: none;
+        &:hover{
+            background-size: 0% 2px;
+            svg{
+                fill:$keyColor;
+            }
         }
     }
     img{
@@ -20,6 +42,7 @@
         fill: white;
         width: 30px;
     }
+
 }
 // header
 .header-presentation {
@@ -33,6 +56,14 @@
         display: block; 
         overflow: hidden; 
         flex: 1;
+        &:hover{
+            h2{
+                // color:$keyColor;
+                transform: scale(1.04);
+                transition: all 0.5s ease;
+                background-size: 100% 2px;
+            }
+        }
         h2 {
             position: absolute; 
             bottom: 5vh; 
@@ -43,6 +74,15 @@
             padding: 10px; 
             color:$white; 
             z-index: 2;
+            /*Subrayado animado*/
+            background-image: linear-gradient(currentColor, currentColor);
+            background-position: 0% 100%;
+            background-repeat: no-repeat;
+            background-size: 0% 2px;
+            transition: background-size .3s;
+            span{
+                font-family: 'coolveticaregular';
+            }
         }
     }
     img {
@@ -54,6 +94,9 @@
             width: 150%; 
             cursor: pointer;
             filter: none;
+            a{
+                color: $keyColor;
+            }
         }
     }
     &::before {

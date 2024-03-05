@@ -1,10 +1,58 @@
+// fonts
+@font-face {
+    font-family: 'coolveticaregular';
+    src: url('../fonts/coolvetica_rg-webfont.woff2') format('woff2'),
+         url('../fonts/coolvetica_rg-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'gothambold';
+    src: url('../fonts/gotham-bold-webfont.woff2') format('woff2'),
+         url('../fonts/gotham-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'gothamlight';
+    src: url('../fonts/gotham-light-webfont.woff2') format('woff2'),
+         url('../fonts/gotham-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'gothammedium';
+    src: url('../fonts/gotham-medium-webfont.woff2') format('woff2'),
+         url('../fonts/gotham-medium-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 // vars
 $white:#EDECF1;
+$black:#0a0a0a;
+$keyColor:#FF5100;
+$yellow:#FEFD00;
+$green:#00E16D;
+$violet:#6C25FF;
 
+// general
 *{
     overflow-x: hidden;
     box-sizing: border-box;
+    font-family: 'gothamlight';
 }
+// headings
+h1,
+h2,
+h3{
+    overflow-y: hidden;
+    font-family: 'coolveticaregular';
+    letter-spacing: .5px;
+}
+
 .container-fluid{
     padding: 0 30px;
     box-sizing: border-box;
@@ -13,4 +61,10 @@ $white:#EDECF1;
 // utilities
 .bg-white{
     background-color: $white;
+}
+.bg-dark{
+    background-color: $black!important;
+}
+.text-white{
+    color: $white;
 }

@@ -1,6 +1,40 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "coolveticaregular";
+  src: url("../fonts/coolvetica_rg-webfont.woff2") format("woff2"), url("../fonts/coolvetica_rg-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "gothambold";
+  src: url("../fonts/gotham-bold-webfont.woff2") format("woff2"), url("../fonts/gotham-bold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "gothamlight";
+  src: url("../fonts/gotham-light-webfont.woff2") format("woff2"), url("../fonts/gotham-light-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "gothammedium";
+  src: url("../fonts/gotham-medium-webfont.woff2") format("woff2"), url("../fonts/gotham-medium-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 * {
   overflow-x: hidden;
   box-sizing: border-box;
+  font-family: "gothamlight";
+}
+
+h1,
+h2,
+h3 {
+  overflow-y: hidden;
+  font-family: "coolveticaregular";
+  letter-spacing: 0.5px;
 }
 
 .container-fluid {
@@ -10,6 +44,14 @@
 
 .bg-white {
   background-color: #EDECF1;
+}
+
+.bg-dark {
+  background-color: #0a0a0a !important;
+}
+
+.text-white {
+  color: #EDECF1;
 }
 
 .menu {
@@ -23,9 +65,33 @@
 .menu a {
   color: white;
   font-weight: 600;
+  font-family: "gothamlight";
+  /*Subrayado animado*/
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 2px;
+  transition: background-size 0.3s;
+}
+.menu a:hover {
+  color: #EDECF1;
+  /*Subrayado animado*/
+  background-size: 100% 2px;
 }
 .menu a.active {
-  color: #EDECF1 !important;
+  color: #FF5100 !important;
+}
+.menu a[href="https://www.instagram.com/twc.soluciones/"],
+.menu a[href="https://wa.me/541159707102?text=Me%20interesa%20un%20presupuesto%20"] {
+  text-decoration: none;
+}
+.menu a[href="https://www.instagram.com/twc.soluciones/"]:hover,
+.menu a[href="https://wa.me/541159707102?text=Me%20interesa%20un%20presupuesto%20"]:hover {
+  background-size: 0% 2px;
+}
+.menu a[href="https://www.instagram.com/twc.soluciones/"]:hover svg,
+.menu a[href="https://wa.me/541159707102?text=Me%20interesa%20un%20presupuesto%20"]:hover svg {
+  fill: #FF5100;
 }
 .menu img {
   width: 110px;
@@ -48,6 +114,11 @@
   overflow: hidden;
   flex: 1;
 }
+.header-presentation a:hover h2 {
+  transform: scale(1.04);
+  transition: all 0.5s ease;
+  background-size: 100% 2px;
+}
 .header-presentation a h2 {
   position: absolute;
   bottom: 5vh;
@@ -58,6 +129,15 @@
   padding: 10px;
   color: #EDECF1;
   z-index: 2;
+  /*Subrayado animado*/
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 2px;
+  transition: background-size 0.3s;
+}
+.header-presentation a h2 span {
+  font-family: "coolveticaregular";
 }
 .header-presentation img {
   width: 100%;
@@ -69,6 +149,9 @@
   width: 150%;
   cursor: pointer;
   filter: none;
+}
+.header-presentation img:hover a {
+  color: #FF5100;
 }
 .header-presentation::before {
   content: "";
@@ -82,12 +165,6 @@
   z-index: 1;
 }
 
-h1,
-h2,
-h3 {
-  overflow-y: hidden;
-}
-
 .twc .img-fluid {
   width: 100%;
   height: 100%;
@@ -98,6 +175,175 @@ h3 {
 }
 .twc article p {
   padding: 10px 30px;
+}
+
+.services .accordion button span {
+  font-size: 2em;
+  color: white;
+  background-color: #0a0a0a;
+  padding: 5px 10px;
+}
+.services .accordion .accordion-button::after {
+  background-image: url("../img/caret-circle.svg");
+  transition: transform 0.3s ease; /* Agrega una transición suave */
+  transform: rotate(0deg); /* Dirección hacia abajo por defecto */
+}
+.services .accordion .accordion-button.collapsed::after {
+  transform: rotate(180deg); /* Dirección hacia arriba cuando está abierto */
+}
+.services .accordion .accordion-body {
+  background-color: #0a0a0a;
+  color: #EDECF1;
+}
+.services .accordion .accordion-item {
+  border-radius: 0 !important;
+  border: none !important;
+}
+.services .accordion .accordion-item:last-of-type > .accordion-collapse {
+  border-radius: 0 !important;
+  border: none !important;
+}
+.services .accordion .accordion-item:first-of-type > .accordion-header .accordion-button {
+  background: url(../img/accordion-branding.jpg) no-repeat center top;
+  background-size: cover;
+  height: 120px;
+}
+.services .accordion .accordion-item:nth-of-type(2) > .accordion-header .accordion-button {
+  background: url(../img/accordion-web-develpment.jpg) no-repeat top;
+  background-size: cover;
+  height: 120px;
+}
+.services .accordion .accordion-item:nth-of-type(3) > .accordion-header .accordion-button {
+  background: url(../img/accordion-digital-marketing.jpg) no-repeat right top;
+  background-size: cover;
+  height: 120px;
+}
+.services .accordion .accordion-item:last-of-type > .accordion-header .accordion-button {
+  background: url(../img/accordion-social-media.jpg) no-repeat center top;
+  background-size: cover;
+  height: 120px;
+}
+
+.portfolio {
+  background-color: #0a0a0a;
+}
+.portfolio .gallery {
+  justify-content: space-between;
+}
+.portfolio .gallery article {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: solid #EDECF1 3px;
+  height: 40vh;
+  padding: 30px;
+  box-sizing: border-box;
+  width: 33%;
+}
+.portfolio .gallery article a {
+  color: white;
+  text-decoration: none;
+  text-decoration: none;
+  text-align: center;
+  overflow: hidden;
+}
+.portfolio .gallery article a:hover {
+  border: solid 1px white;
+}
+.portfolio .gallery article:first-of-type {
+  background: url(../img/gallery-go-transfer.jpg) no-repeat;
+  background-size: cover;
+}
+.portfolio .gallery article:nth-child(2) {
+  background: url(../img/gallery-go-transfer.jpg) no-repeat;
+  background-size: cover;
+}
+.portfolio .gallery article:nth-child(3) {
+  background: url(../img/gallery-go-transfer.jpg) no-repeat;
+  background-size: cover;
+}
+.portfolio .gallery article:nth-child(4) {
+  background: url(../img/gallery-go-transfer.jpg) no-repeat;
+  background-size: cover;
+}
+.portfolio .gallery article:nth-child(5) {
+  background: url(../img/gallery-go-transfer.jpg) no-repeat;
+  background-size: cover;
+}
+.portfolio .gallery article:nth-child(6) {
+  background: url(../img/gallery-go-transfer.jpg) no-repeat;
+  background-size: cover;
+}
+
+.about-us article {
+  background-color: #0a0a0a;
+  color: white;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  text-align: left;
+  margin-right: 10px;
+  box-sizing: border-box;
+  padding-bottom: 20px;
+}
+.about-us article img {
+  padding: 20px;
+}
+.about-us article h3 {
+  text-transform: uppercase;
+}
+.about-us article a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  text-align: left;
+}
+.about-us article ul li {
+  list-style: disc;
+}
+
+@media (width <= 992px) {
+  .navbar-toggler {
+    border: #EDECF1 solid 1px;
+  }
+  .portfolio .gallery article {
+    width: 50%;
+  }
+  .about-us article {
+    width: 50%;
+    flex: none;
+    margin-bottom: 20px;
+  }
+}
+@media (width <= 768px) {
+  .menu {
+    background-color: rgba(0, 0, 0, 0.6) !important;
+  }
+  .header-presentation {
+    flex-direction: column;
+    padding-top: 100px;
+  }
+  .header-presentation h2 {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  .twc article {
+    margin-bottom: 20px;
+  }
+  .portfolio .gallery article {
+    width: 100%;
+  }
+  .about-us article {
+    width: 100%;
+  }
+}
+@media (width <= 450px) {
+  .services .accordion button span {
+    font-size: 1.5em;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
