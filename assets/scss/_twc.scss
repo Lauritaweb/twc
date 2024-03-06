@@ -18,6 +18,8 @@
 .services{
     .accordion{
         button{
+            display: flex;
+            justify-content: space-between;
             span{
                 font-size: 2em;
                 color: white;
@@ -29,11 +31,18 @@
             &::after {
                 background-image: url("../img/caret-circle.svg");
                 transition: transform 0.3s ease; /* Agrega una transición suave */
-                transform: rotate(0deg); /* Dirección hacia abajo por defecto */
+                transform: rotate(180deg); /* Dirección hacia abajo por defecto */
+                width: 50px;
+                height: 50px;
+                background-size: contain;
             }
     
+            &:first-of-type::after { 
+                transform: rotate(0deg); 
+            }
+        
             &.collapsed::after {
-                transform: rotate(180deg); /* Dirección hacia arriba cuando está abierto */
+                transform: rotate(0deg); 
             }
         }
         .accordion-body{
