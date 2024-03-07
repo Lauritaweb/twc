@@ -37,6 +37,7 @@ $keyColor:#FF5100;
 $yellow:#FEFD00;
 $green:#00E16D;
 $violet:#6C25FF;
+$gris:#3A3A3A;
 
 // general
 *{
@@ -51,10 +52,12 @@ h3{
     overflow-y: hidden;
     font-family: 'coolveticaregular';
     letter-spacing: .5px;
+    color: $gris;
 }
 p{
     font-size: 1.2em;
     line-height: 1.4em;
+    color: $gris;
 }
 .container-fluid{
     padding: 0 30px;
@@ -70,4 +73,7 @@ p{
 }
 .text-white{
     color: $white;
+}
+.test-gray{
+    color: $gris;
 }

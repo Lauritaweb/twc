@@ -3,11 +3,12 @@
 <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 685.5 681.2" style="enable-background:new 0 0 685.5 681.2;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:none;stroke:#FFFFFF;stroke-width:66.6667;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:133.3333;}
+	.st0{fill:#3A3A3A;}
+	.st1{fill:none;stroke:#FFFFFF;stroke-width:66.6667;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:133.3333;}
 </style>
-<circle cx="339.2" cy="333.9" r="300.2"/>
+<circle class="st0" cx="339.2" cy="333.9" r="300.2"/>
 <g id="Arrow__x2F__Caret_x5F_Circle_x5F_Up">
-	<path id="Vector" class="st0" d="M439.5,304l-100,100l-100-100 M39.5,337.4c0,165.7,134.3,300,300,300c165.7,0,300-134.3,300-300
-		c0-165.7-134.3-300-300-300C173.8,37.4,39.5,171.7,39.5,337.4z"/>
+	<path id="Vector" class="st1" d="M439.5,304l-100,100l-100-100 M39.5,337.4c0,165.7,134.3,300,300,300s300-134.3,300-300
+		s-134.3-300-300-300C173.8,37.4,39.5,171.7,39.5,337.4z"/>
 </g>
 </svg>

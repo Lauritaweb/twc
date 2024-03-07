@@ -35,11 +35,13 @@ h3 {
   overflow-y: hidden;
   font-family: "coolveticaregular";
   letter-spacing: 0.5px;
+  color: #3A3A3A;
 }
 
 p {
   font-size: 1.2em;
   line-height: 1.4em;
+  color: #3A3A3A;
 }
 
 .container-fluid {
@@ -59,13 +61,17 @@ p {
   color: #EDECF1;
 }
 
+.test-gray {
+  color: #3A3A3A;
+}
+
 .menu {
   background-color: transparent;
   position: fixed;
   padding-top: 10px;
   width: 100%;
   box-sizing: border-box;
-  z-index: 5;
+  z-index: 100;
 }
 .menu a {
   color: white;
@@ -191,6 +197,8 @@ p {
   color: white;
   background-color: #0a0a0a;
   padding: 5px 10px;
+  position: relative;
+  z-index: 5;
 }
 .services .accordion .accordion-button::after {
   background-image: url("../img/caret-circle.svg");
@@ -199,12 +207,17 @@ p {
   width: 50px;
   height: 50px;
   background-size: contain;
+  position: relative;
+  z-index: 6;
 }
 .services .accordion .accordion-button:first-of-type::after {
   transform: rotate(0deg);
 }
 .services .accordion .accordion-button.collapsed::after {
   transform: rotate(0deg);
+}
+.services .accordion .accordion-button:not(.collapsed)::after {
+  transform: rotate(180deg);
 }
 .services .accordion .accordion-body {
   background-color: #0a0a0a;
@@ -223,29 +236,93 @@ p {
   background-size: cover;
   height: 120px;
 }
+.services .accordion .accordion-item:first-of-type > .accordion-header .accordion-button:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+  transition: opacity 0.3s ease;
+  opacity: 1;
+}
+.services .accordion .accordion-item:first-of-type > .accordion-header .accordion-button:hover:before {
+  opacity: 0;
+}
 .services .accordion .accordion-item:nth-of-type(2) > .accordion-header .accordion-button {
   background: url(../img/accordion-web-develpment.jpg) no-repeat top;
   background-size: cover;
   height: 120px;
+}
+.services .accordion .accordion-item:nth-of-type(2) > .accordion-header .accordion-button:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+  transition: opacity 0.3s ease;
+  opacity: 1;
+}
+.services .accordion .accordion-item:nth-of-type(2) > .accordion-header .accordion-button:hover:before {
+  opacity: 0;
 }
 .services .accordion .accordion-item:nth-of-type(3) > .accordion-header .accordion-button {
   background: url(../img/accordion-digital-marketing.jpg) no-repeat right top;
   background-size: cover;
   height: 120px;
 }
+.services .accordion .accordion-item:nth-of-type(3) > .accordion-header .accordion-button:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+  transition: opacity 0.3s ease;
+  opacity: 1;
+}
+.services .accordion .accordion-item:nth-of-type(3) > .accordion-header .accordion-button:hover:before {
+  opacity: 0;
+}
 .services .accordion .accordion-item:last-of-type > .accordion-header .accordion-button {
   background: url(../img/accordion-social-media.jpg) no-repeat center top;
   background-size: cover;
   height: 120px;
 }
+.services .accordion .accordion-item:last-of-type > .accordion-header .accordion-button:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+  transition: opacity 0.3s ease;
+  opacity: 1;
+}
+.services .accordion .accordion-item:last-of-type > .accordion-header .accordion-button:hover:before {
+  opacity: 0;
+}
+.services .accordion .accordion-item:last-of-type > .accordion-header .accordion-button.collapsed {
+  border-bottom-left-radius: 0 !important;
+}
 
 .portfolio {
-  background-color: #0a0a0a;
+  background-color: #3A3A3A;
 }
 .portfolio .gallery {
   justify-content: space-between;
 }
 .portfolio .gallery article {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -254,46 +331,80 @@ p {
   height: 40vh;
   padding: 30px;
   box-sizing: border-box;
-  width: 33%;
+  width: 24%;
+}
+.portfolio .gallery article:hover {
+  cursor: pointer;
+}
+.portfolio .gallery article h3 {
+  background-color: rgb(0, 0, 0);
+  padding: 4px;
+  font-size: 1.4em;
+  position: relative;
+  z-index: 5;
 }
 .portfolio .gallery article a {
   color: white;
   text-decoration: none;
-  text-decoration: none;
   text-align: center;
   overflow: hidden;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.portfolio .gallery article a:hover {
-  border: solid 1px white;
+.portfolio .gallery article:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  transition: opacity 0.3s ease;
+  opacity: 1;
+}
+.portfolio .gallery article:hover:before {
+  opacity: 0;
+}
+.portfolio .gallery article:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  filter: grayscale(100%);
+  z-index: 2;
+  transition: filter 0.3s ease;
+}
+.portfolio .gallery article:hover:after {
+  filter: grayscale(0);
 }
 .portfolio .gallery article:first-of-type {
-  background: url(../img/gallery-go-transfer.jpg) no-repeat;
+  background-image: url(../img/portfolio-branding.jpg);
   background-size: cover;
 }
 .portfolio .gallery article:nth-child(2) {
-  background: url(../img/gallery-go-transfer.jpg) no-repeat;
+  background-image: url(../img/portfolio-desarrollo-web.jpg);
   background-size: cover;
 }
 .portfolio .gallery article:nth-child(3) {
-  background: url(../img/gallery-go-transfer.jpg) no-repeat;
+  background-image: url(../img/portfolio-mkt-digital.jpg);
   background-size: cover;
 }
 .portfolio .gallery article:nth-child(4) {
-  background: url(../img/gallery-go-transfer.jpg) no-repeat;
-  background-size: cover;
-}
-.portfolio .gallery article:nth-child(5) {
-  background: url(../img/gallery-go-transfer.jpg) no-repeat;
-  background-size: cover;
-}
-.portfolio .gallery article:nth-child(6) {
-  background: url(../img/gallery-go-transfer.jpg) no-repeat;
+  background-image: url(../img/portfolio-social-media.jpg);
   background-size: cover;
 }
 
 .about-us article {
-  background-color: #0a0a0a;
-  color: white;
+  background-color: white;
+  color: #3A3A3A;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
@@ -304,18 +415,23 @@ p {
   margin-right: 10px;
   box-sizing: border-box;
   padding-bottom: 20px;
+  border: solid 1px #3A3A3A;
 }
 .about-us article img {
   padding: 20px;
+  width: 217px;
 }
 .about-us article h3 {
   text-transform: uppercase;
 }
 .about-us article a {
   text-decoration: none;
-  color: white;
+  color: #3A3A3A;
   font-weight: 600;
   text-align: left;
+}
+.about-us article a:hover {
+  text-decoration: underline;
 }
 .about-us article ul li {
   list-style: disc;

@@ -25,6 +25,8 @@
                 color: white;
                 background-color: $black;
                 padding: 5px 10px;
+                position: relative;
+                z-index: 5;
             }
         }
         .accordion-button {
@@ -35,14 +37,17 @@
                 width: 50px;
                 height: 50px;
                 background-size: contain;
+                position: relative;
+                z-index: 6;
             }
-    
             &:first-of-type::after { 
                 transform: rotate(0deg); 
             }
-        
             &.collapsed::after {
                 transform: rotate(0deg); 
+            }           
+            &:not(.collapsed)::after {
+                transform: rotate(180deg); 
             }
         }
         .accordion-body{
@@ -61,30 +66,96 @@
             background: url(../img/accordion-branding.jpg) no-repeat center top;
             background-size: cover;
             height: 120px;
+            &:before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.4); 
+                z-index: 1;
+                transition: opacity 0.3s ease; 
+                opacity: 1; 
+            }
+            &:hover:before {
+                opacity: 0; 
+            }
         }
         .accordion-item:nth-of-type(2) > .accordion-header .accordion-button{
             background: url(../img/accordion-web-develpment.jpg) no-repeat top;
             background-size: cover;
             height: 120px;
+            &:before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.4); 
+                z-index: 1;
+                transition: opacity 0.3s ease; 
+                opacity: 1; 
+            }
+            &:hover:before {
+                opacity: 0; 
+            }
         }
         .accordion-item:nth-of-type(3) > .accordion-header .accordion-button{
             background: url(../img/accordion-digital-marketing.jpg) no-repeat right top;
             background-size: cover;
             height: 120px;
+            &:before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.4); 
+                z-index: 1;
+                transition: opacity 0.3s ease; 
+                opacity: 1; 
+            }
+            &:hover:before {
+                opacity: 0; 
+            }
         }
         .accordion-item:last-of-type > .accordion-header .accordion-button{
             background: url(../img/accordion-social-media.jpg) no-repeat center top;
             background-size: cover;
             height: 120px;
+            &:before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.4); 
+                z-index: 1;
+                transition: opacity 0.3s ease; 
+                opacity: 1; 
+            }
+            &:hover:before {
+                opacity: 0; 
+            }
+        }
+        .accordion-item:last-of-type > .accordion-header .accordion-button.collapsed{
+            border-bottom-left-radius: 0!important;
         }
     }
 }
 // porfolio
-.portfolio{
-    background-color: $black;
-    .gallery{
+.portfolio {
+    background-color: $gris;
+
+    .gallery {
         justify-content: space-between;
-        article{
+
+        article {
+            position: relative;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -93,49 +164,93 @@
             height: 40vh;
             padding: 30px;
             box-sizing: border-box;
-            width: 33%;
-            a{
+            width: 24%;
+            &:hover{
+                cursor: pointer;
+            }
+            h3 {
+                background-color: rgb(0, 0, 0);
+                padding: 4px;
+                font-size: 1.4em;
+                position: relative;
+                z-index: 5;
+            }
+
+            a {
                 color: white;
                 text-decoration: none;
-                text-decoration: none;
                 text-align: center;
-                overflow: hidden;  
-                &:hover{
-                    border: solid 1px white;
-                }
+                overflow: hidden;
+                height: 100%;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
             }
-            &:first-of-type{
-                background: url(../img/gallery-go-transfer.jpg) no-repeat;
+
+            &:before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.5); 
+                z-index: 1;
+                transition: opacity 0.3s ease; 
+                opacity: 1; 
+            }
+
+            &:hover:before {
+                opacity: 0; 
+            }
+
+            &:after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-size: cover;
+                background-repeat: no-repeat;
+                filter: grayscale(100%); 
+                z-index: 2;
+                transition: filter 0.3s ease; 
+            }
+
+            &:hover:after {
+                filter: grayscale(0); 
+            }
+
+            &:first-of-type {
+                background-image: url(../img/portfolio-branding.jpg);
                 background-size: cover;
             }
-            &:nth-child(2){
-                background: url(../img/gallery-go-transfer.jpg) no-repeat;
+
+            &:nth-child(2) {
+                background-image: url(../img/portfolio-desarrollo-web.jpg);
                 background-size: cover;
             }
-            &:nth-child(3){
-                background: url(../img/gallery-go-transfer.jpg) no-repeat;
+
+            &:nth-child(3) {
+                background-image: url(../img/portfolio-mkt-digital.jpg);
                 background-size: cover;
             }
-            &:nth-child(4){
-                background: url(../img/gallery-go-transfer.jpg) no-repeat;
-                background-size: cover;
-            }
-            &:nth-child(5){
-                background: url(../img/gallery-go-transfer.jpg) no-repeat;
-                background-size: cover;
-            }
-            &:nth-child(6){
-                background: url(../img/gallery-go-transfer.jpg) no-repeat;
+
+            &:nth-child(4) {
+                background-image: url(../img/portfolio-social-media.jpg);
                 background-size: cover;
             }
         }
     }
 }
+
 // about us
 .about-us{
     article{
-        background-color: $black;
-        color: white;
+        background-color: white;
+        color:$gris;
         border-radius: 8px;
         display: flex;
         flex-direction: column;
@@ -146,17 +261,22 @@
         margin-right: 10px;
         box-sizing: border-box;
         padding-bottom: 20px;
+        border:solid 1px $gris;
         img{
             padding: 20px;
+            width: 217px;
         }
         h3{
             text-transform: uppercase;
         }
         a{
             text-decoration: none;
-            color: white;
+            color: $gris;
             font-weight: 600;
             text-align: left;
+            &:hover{
+                text-decoration: underline;
+            }
         }
         ul{
             li{
