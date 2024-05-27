@@ -152,7 +152,8 @@
     background-color: $gris;
 
     .gallery {
-        justify-content: space-between;
+        justify-content: flex-start;
+        gap: 5px;
 
         article {
             position: relative;
@@ -169,7 +170,7 @@
                 cursor: pointer;
             }
             h3 {
-                background-color: rgb(0, 0, 0);
+                background-color: rgba(0, 0, 0,.5);
                 padding: 4px;
                 font-size: 1.4em;
                 position: relative;
@@ -224,22 +225,50 @@
             }
 
             &:first-of-type {
-                background-image: url(../img/portfolio-branding.jpg);
+                background-image: url(../portfolio/inter-transfer.JPG);
                 background-size: cover;
             }
 
             &:nth-child(2) {
-                background-image: url(../img/portfolio-desarrollo-web.jpg);
+                background-image: url(../portfolio/respaldar.JPG);
                 background-size: cover;
             }
 
             &:nth-child(3) {
-                background-image: url(../img/portfolio-mkt-digital.jpg);
+                background-image: url(../portfolio/go-transfer.JPG);
                 background-size: cover;
             }
 
             &:nth-child(4) {
-                background-image: url(../img/portfolio-social-media.jpg);
+                background-image: url(../portfolio/nuevomodulo2.JPG);
+                background-size: cover;
+            }
+            &:nth-child(5) {
+                background-image: url(../portfolio/bio-fitness.JPG);
+                background-size: cover;
+            }
+            &:nth-child(6) {
+                background-image: url(../portfolio/fat-vial.JPG);
+                background-size: cover;
+            }
+            &:nth-child(7) {
+                background-image: url(../portfolio/flexi-rigs.JPG);
+                background-size: cover;
+            }
+            &:nth-child(8) {
+                background-image: url(../portfolio/ici.JPG);
+                background-size: cover;
+            }
+            &:nth-child(9) {
+                background-image: url(../portfolio/ifn.JPG);
+                background-size: cover;
+            }
+            &:nth-child(10) {
+                background-image: url(../portfolio/sin-apneas.JPG);
+                background-size: cover;
+            }
+            &:nth-child(11) {
+                background-image: url(../portfolio/ventihouse.JPG);
                 background-size: cover;
             }
         }
